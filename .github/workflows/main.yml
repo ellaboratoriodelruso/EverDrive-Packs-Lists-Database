@@ -16,3 +16,5 @@ jobs:
       with:
         # Commit message
         commit_message: Rebuild "MiSTer SMDB.txt"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
