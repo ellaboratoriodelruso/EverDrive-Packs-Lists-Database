@@ -1,19 +1,18 @@
-name: CI
+name: Repack
 
 on: [push]
 
 jobs:
   build-MiSTer-pack:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Re-generate MiSTer SMDB.txt
       run: |
         rm -f "EverDrive Pack SMDBs/MiSTer SMDB.txt"
-        awk -f build_MiSTer_SMBD.awk < "EverDrive Pack SMDBs/*.txt" > "EverDrive Pack SMDBs/MiSTer SMDB.txt"
-    - name: Simple commit
-      uses: zwaldowski/git-commit-action@v1
+        awk -f build_MiSTer_SMBD.awk < "EverDrive Pack SMDBs/"*.txt > "EverDrive Pack SMDBs/MiSTer SMDB.txt"
+    - name: Git Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v2.5.0
       with:
-        commit_message: Update "MiSTer SMDB.txt"
+        # Commit message
+        commit_message: Rebuild "MiSTer SMDB.txt"
