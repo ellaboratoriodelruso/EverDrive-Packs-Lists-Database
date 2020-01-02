@@ -10,7 +10,8 @@ jobs:
     - name: Re-generate MiSTer SMDB.txt
       run: |
         rm -f EverDrive\ Pack\ SMDBs/MiSTer\ SMDB.txt
-        cat EverDrive\ Pack\ SMDBs/*.txt | awk -f build_MiSTer_SMBD.awk > EverDrive\ Pack\ SMDBs/MiSTer\ SMDB.txt
+        cat EverDrive\ Pack\ SMDBs/*.txt | awk -f build_MiSTer_SMBD.awk > MiSTer\ SMDB.txt
+        mv MiSTer\ SMDB.txt EverDrive\ Pack\ SMDBs/
     - name: Git Auto Commit
       uses: stefanzweifel/git-auto-commit-action@v2.5.0
       with:
