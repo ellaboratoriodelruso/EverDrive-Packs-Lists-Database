@@ -16,6 +16,7 @@ jobs:
       with:
         # Commit message
         commit_message: Rebuild "MiSTer SMDB.txt"
-        branch: ${{ github.head_ref }}
+        branch: master
+        file_pattern: EverDrive\ Pack\ SMDBs/MiSTer\ SMDB.txt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
